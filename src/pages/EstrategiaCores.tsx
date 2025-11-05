@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
-import blazeIcon from "@/assets/blaze-icon.png";
-import freitasBlazeLogo from "@/assets/freitas-blaze-logo.png";
+import blazeNewLogo from "@/assets/blaze-new-logo.jpg";
 import redSignalIcon from "@/assets/red-signal-icon.png";
 import blackSignalIcon from "@/assets/black-signal-icon.png";
 
@@ -195,7 +194,7 @@ const EstrategiaCores = () => {
             <ArrowLeft size={18} />
           </button>
           <div className="flex items-center gap-2">
-            <img src={freitasBlazeLogo} alt="Freitas Blaze" className="h-8" />
+            <img src={blazeNewLogo} alt="Freitas Blaze" className="h-8" />
           </div>
           <div className="text-xs text-muted-foreground">{currentTime}</div>
         </div>
@@ -204,7 +203,7 @@ const EstrategiaCores = () => {
         <div className="mt-1.5 flex items-center gap-3">
           <div className="w-[80px] h-[80px] flex items-center justify-center overflow-hidden">
             <img 
-              src={freitasBlazeLogo} 
+              src={blazeNewLogo} 
               alt="Freitas Blaze" 
               className="w-full h-full object-contain"
             />

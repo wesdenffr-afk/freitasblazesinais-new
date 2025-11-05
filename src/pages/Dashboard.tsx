@@ -2,11 +2,9 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Home, LogOut, Send } from "lucide-react";
-import blazeIcon from "@/assets/blaze-icon.png";
-import blazeLogo from "@/assets/blaze-logo.png";
+import blazeNewLogo from "@/assets/blaze-new-logo.jpg";
 import coresPrecisas from "@/assets/cores-precisas.png";
 import brancoCerteiro from "@/assets/branco-certeiro.png";
-import freitasBlazeLogo from "@/assets/freitas-blaze-logo.png";
 
 const Dashboard = () => {
   const [username, setUsername] = useState("");
@@ -54,7 +52,7 @@ const Dashboard = () => {
         <div className="mt-1.5 flex items-center gap-3">
           <div className="w-[62px] h-[62px] bg-gradient-to-b from-zinc-800 to-zinc-950 rounded-[10px] flex items-center justify-center border-2 border-white/[0.02] overflow-hidden p-2">
             <img 
-              src={blazeLogo} 
+              src={blazeNewLogo} 
               alt="Blaze" 
               className="w-full h-full object-contain"
             />
@@ -69,7 +67,7 @@ const Dashboard = () => {
           <div className="text-center space-y-6 max-w-md w-full">
             <div className="w-48 h-48 mx-auto flex items-center justify-center">
               <img 
-                src={freitasBlazeLogo} 
+                src={blazeNewLogo} 
                 alt="Freitas Blaze" 
                 className="w-full h-full object-contain"
               />

@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
-import blazeCorrectLogo from "@/assets/blaze-logo-correct.png";
-import freitasBlazeLogo from "@/assets/freitas-blaze-logo.png";
+import blazeNewLogo from "@/assets/blaze-new-logo.jpg";
 
 const SUPABASE_URL = 'https://chbuukoxnnohhojaedsm.supabase.co';
 const POLL_MS = 50;
@@ -157,7 +156,7 @@ const EstrategiaBranco = () => {
         <div className="mt-1.5 flex items-center gap-3">
           <div className="w-[80px] h-[80px] flex items-center justify-center overflow-hidden">
             <img 
-              src={freitasBlazeLogo} 
+              src={blazeNewLogo} 
               alt="Freitas Blaze" 
               className="w-full h-full object-contain"
             />
@@ -227,7 +226,7 @@ const EstrategiaBranco = () => {
                         {/* Disco/Logo recortado em círculo para evitar quadrado visível */}
                         <div className="relative w-20 h-20 rounded-full overflow-hidden flex items-center justify-center">
                           <img 
-                            src={blazeCorrectLogo} 
+                            src={blazeNewLogo} 
                             alt="Blaze" 
                             className="w-full h-full object-cover rounded-full"
                           />
