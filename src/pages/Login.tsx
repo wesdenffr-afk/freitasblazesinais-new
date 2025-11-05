@@ -126,37 +126,12 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[hsl(var(--hacker-bg-from))] to-[hsl(var(--hacker-bg-to))] text-foreground p-3.5 overflow-hidden font-['Poppins',sans-serif]">
-      <div className="max-w-full h-screen flex flex-col">
-        {/* Top Bar */}
-        <div className="h-11 flex items-center justify-between px-2 py-1.5">
-          <button className="w-8 h-8 rounded-lg bg-transparent border border-white/[0.03] flex items-center justify-center font-bold text-white">
-            ≡
-          </button>
-          <div className="font-bold tracking-wider">Freitas Blaze</div>
-          <div className="text-xs text-muted-foreground">{currentTime}</div>
-        </div>
-
-        {/* Hero Section */}
-        <div className="mt-1.5 flex items-center gap-3">
-          <div className="w-[62px] h-[62px] bg-gradient-to-b from-zinc-800 to-zinc-950 rounded-[10px] flex items-center justify-center border-2 border-white/[0.02] overflow-hidden p-2">
-            <img 
-              src={blazeNewLogo} 
-              alt="Blaze" 
-              className="w-full h-full object-contain"
-            />
-          </div>
-          <div className="flex-1 font-black text-[34px] leading-[0.9] uppercase">
-            BRANCO <span className="block text-primary">SEMGALE</span>
-          </div>
-        </div>
-
-        {/* Content Area */}
-        <div className="mt-3.5 p-3 bg-gradient-to-b from-white/[0.02] to-white/[0.01] rounded-2xl min-h-[480px] relative">
-          {/* Login Modal */}
-          <div className="w-[86%] max-w-[320px] mx-auto bg-gradient-to-b from-white/[0.03] to-black/45 rounded-xl p-3.5 shadow-[var(--shadow-glow)] border border-white/[0.04]">
-            <div className="flex items-center gap-2.5 mb-2">
-              <div className="w-12 h-12 rounded-lg flex items-center justify-center overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-[#3a4d5c] via-[#2d3e4f] to-[#1e2a35] text-foreground p-6 overflow-hidden font-['Poppins',sans-serif] flex items-center justify-center">
+      <div className="max-w-md w-full flex flex-col gap-4">
+        {/* Login Card with Glassmorphism */}
+        <div className="w-full backdrop-blur-xl bg-gradient-to-b from-white/10 to-white/5 rounded-3xl p-6 shadow-2xl border border-white/20">
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="w-16 h-16 rounded-2xl flex items-center justify-center overflow-hidden bg-white/10 p-2">
                 <img 
                   src={blazeNewLogo} 
                   alt="Freitas Blaze" 
@@ -164,16 +139,16 @@ const Login = () => {
                 />
               </div>
               <div>
-                <h3 className="text-sm font-bold m-0 leading-tight">APP BLAZE FREITAS WHITE</h3>
-                <p className="text-muted-foreground text-[13px] mt-1 m-0">
-                  {isLogin 
-                    ? "Realize o Login no app para continuar seu acesso!"
-                    : "Crie sua conta para começar!"}
+                <h3 className="text-xl font-black text-white m-0 leading-tight flex items-center gap-2">
+                  <span className="text-primary">Freitas</span> White
+                </h3>
+                <p className="text-white/70 text-sm mt-1 m-0">
+                  Cassino Online Premium
                 </p>
               </div>
             </div>
 
-            <form onSubmit={handleSubmit} className="flex flex-col gap-2.5">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-3">
               {!isLogin && (
                 <Input
                   type="text"
@@ -181,68 +156,83 @@ const Login = () => {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   required={!isLogin}
-                  className="bg-white/[0.02] border-white/[0.03] text-white placeholder:text-muted-foreground focus:border-primary/50"
+                  className="bg-white/80 border-0 text-gray-800 placeholder:text-gray-500 h-12 rounded-xl shadow-sm"
                 />
               )}
               <Input
                 type="text"
-                placeholder="Usuário"
+                placeholder="Email da Betória"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 required
-                className="bg-white/[0.02] border-white/[0.03] text-white placeholder:text-muted-foreground focus:border-primary/50"
+                className="bg-white/80 border-0 text-gray-800 placeholder:text-gray-500 h-12 rounded-xl shadow-sm"
               />
               <Input
                 type="password"
-                placeholder="Senha"
+                placeholder="Digite sua Senha"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="bg-white/[0.02] border-white/[0.03] text-white placeholder:text-muted-foreground focus:border-primary/50"
+                className="bg-white/80 border-0 text-gray-800 placeholder:text-gray-500 h-12 rounded-xl shadow-sm"
               />
               <Button
                 type="submit"
                 disabled={loading}
-                className="mt-1.5 bg-primary hover:bg-primary/90 text-white font-bold shadow-[var(--shadow-red)] transition-[var(--transition-smooth)]"
+                className="mt-2 bg-gradient-to-r from-red-500 to-orange-600 hover:from-red-600 hover:to-orange-700 text-white font-bold h-12 rounded-xl shadow-lg text-base"
               >
-                {loading ? "CARREGANDO..." : isLogin ? "LOGIN" : "CRIAR CONTA"}
+                {loading ? "CARREGANDO..." : isLogin ? "Entrar" : "CRIAR CONTA"}
               </Button>
-              {isLogin ? (
-                <a
-                  href="https://t.me/freitaswhite"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-center mt-2 text-[#ff9b9b] text-[13px] bg-transparent border-none cursor-pointer hover:text-[#ff7b7b] transition-[var(--transition-smooth)] no-underline"
+              {isLogin && (
+                <Button
+                  type="button"
+                  onClick={() => window.open('https://t.me/freitaswhite', '_blank')}
+                  className="mt-1 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold h-12 rounded-xl shadow-lg text-base"
                 >
-                  Não tem conta? Registre-se AQUI
-                </a>
-              ) : (
+                  Cadastrar na Freitas White
+                </Button>
+              )}
+              
+              <div className="mt-4 pt-4 border-t border-white/10">
+                <div className="grid grid-cols-3 gap-3 text-center">
+                  <div className="flex flex-col items-center gap-1">
+                    <div className="text-2xl">🎁</div>
+                    <div className="text-xs text-white/70">Bônus</div>
+                  </div>
+                  <div className="flex flex-col items-center gap-1">
+                    <div className="text-2xl">🔒</div>
+                    <div className="text-xs text-white/70">Seguro</div>
+                  </div>
+                  <div className="flex flex-col items-center gap-1">
+                    <div className="text-2xl">⚡</div>
+                    <div className="text-xs text-white/70">Rápido</div>
+                  </div>
+                </div>
+                <p className="text-xs text-white/50 text-center mt-3">
+                  🟢 +179 cadastros hoje
+                </p>
+              </div>
+
+              {!isLogin && (
                 <button
                   type="button"
                   onClick={() => setIsLogin(true)}
-                  className="block text-center mt-2 text-[#ff9b9b] text-[13px] bg-transparent border-none cursor-pointer hover:text-[#ff7b7b] transition-[var(--transition-smooth)]"
+                  className="block text-center mt-2 text-white/70 text-sm bg-transparent border-none cursor-pointer hover:text-white transition-colors"
                 >
                   Já tem conta? Faça LOGIN
                 </button>
               )}
             </form>
           </div>
-
-          {/* Lower Banner */}
-          <div className="mt-4.5 flex gap-3 items-center">
-            <div className="flex-none w-[84px] h-16 rounded-[10px] bg-gradient-to-r from-zinc-900 to-zinc-950 border border-white/[0.03] flex items-center justify-center text-primary font-extrabold text-2xl">
-              🎯
-            </div>
-            <div className="banner-text">
-              <h4 className="text-lg font-extrabold m-0">
-                BRANCO <span className="text-primary">SEM GALE</span>
-              </h4>
-              <p className="text-muted-foreground text-[13px] mt-1.5 m-0">
-                Servidor • <span className="text-green-400">Ativo</span>
-              </p>
-            </div>
+          
+          <div className="text-center">
+            <p className="text-xs text-white/40">
+              Termos e Políticas ↓<br/>
+              Cadastre-se com Login seguro<br/>
+              Cassino com Licença. Todos os direitos reservados<br/>
+              © 2023 - Freitas Blaze Bet. Todos os direitos reservados
+            </p>
+            <div className="text-xs text-white/50 mt-2">{currentTime}</div>
           </div>
-        </div>
       </div>
     </div>
   );

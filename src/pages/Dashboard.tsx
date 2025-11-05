@@ -37,7 +37,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[hsl(var(--hacker-bg-from))] to-[hsl(var(--hacker-bg-to))] text-foreground p-3.5 font-['Poppins',sans-serif]">
+    <div className="min-h-screen bg-gradient-to-br from-[#3a4d5c] via-[#2d3e4f] to-[#1e2a35] text-foreground p-3.5 font-['Poppins',sans-serif]">
       <div className="max-w-full min-h-screen flex flex-col">
         {/* Top Bar */}
         <div className="h-11 flex items-center justify-between px-2 py-1.5">
@@ -63,7 +63,7 @@ const Dashboard = () => {
         </div>
 
         {/* Content Area */}
-        <div className="mt-3.5 p-6 bg-gradient-to-b from-white/[0.02] to-white/[0.01] rounded-2xl flex-1 flex flex-col items-center justify-center overflow-y-auto">
+        <div className="mt-3.5 p-6 backdrop-blur-xl bg-gradient-to-b from-white/10 to-white/5 rounded-2xl flex-1 flex flex-col items-center justify-center overflow-y-auto border border-white/20 shadow-2xl">
           <div className="text-center space-y-6 max-w-md w-full">
             <div className="w-48 h-48 mx-auto flex items-center justify-center">
               <img 
