@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 210 5% 6%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 0 82% 51%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 61%;
+
+    --accent: 0 82% 51%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 82% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 12%;
+    --ring: 0 82% 51%;
+
+    --radius: 0.75rem;
+
+    /* Hacker Blaze specific tokens */
+    --hacker-bg-from: 210 6% 6%;
+    --hacker-bg-to: 0 0% 4%;
+    --hacker-red: 0 82% 51%;
+    --hacker-glass: 0 0% 100%;
+    --hacker-glass-border: 0 0% 100%;
+    
+    /* Gradients */
+    --gradient-hacker: linear-gradient(to bottom, hsl(var(--hacker-bg-from)), hsl(var(--hacker-bg-to)));
+    --gradient-glass: linear-gradient(to bottom, rgba(255, 255, 255, 0.03), rgba(0, 0, 0, 0.45));
+    --gradient-card: linear-gradient(to bottom, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+    
+    /* Shadows */
+    --shadow-glow: 0 12px 36px rgba(0, 0, 0, 0.6);
+    --shadow-red: 0 6px 18px rgba(226, 27, 27, 0.24);
+    
+    /* Transitions */
+    --transition-smooth: all 0.2s ease;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}

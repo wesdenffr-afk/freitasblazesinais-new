@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cores Precisas - Hacker Blaze</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            min-height: 100vh;
+            background: linear-gradient(to bottom, #0f1112, #090909);
+            overflow-x: hidden;
+            padding: 14px;
+        }
+
+        .container {
+            max-width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 6px 8px;
+        }
+
+        .back-btn {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .app-title {
+            font-weight: bold;
+            letter-spacing: 0.05em;
+        }
+
+        .time-display {
+            font-size: 12px;
+            color: #9b9b9b;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            margin-top: 6px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .hero-icon {
+            width: 62px;
+            height: 62px;
+            background: linear-gradient(to bottom, #1f1f1f, #0f0f0f);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgba(255, 255, 255, 0.02);
+            font-size: 32px;
+        }
+
+        .hero-text {
+            flex: 1;
+            font-weight: 900;
+            font-size: 28px;
+            line-height: 0.9;
+            text-transform: uppercase;
+        }
+
+        .hero-text .red-text {
+            display: block;
+            color: #e21b1b;
+        }
+
+        /* Content Area */
+        .content-area {
+            margin-top: 14px;
+            padding: 24px;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+            border-radius: 16px;
+            flex: 1;
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .page-title h1 {
+            font-size: 30px;
+            font-weight: 900;
+            color: #e21b1b;
+            margin-bottom: 8px;
+        }
+
+        .page-title p {
+            color: #9b9b9b;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card p {
+            color: #9b9b9b;
+            margin-bottom: 16px;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 999px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #e21b1b;
+            width: 0%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { width: 0%; }
+            50% { width: 60%; }
+        }
+
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+            margin-bottom: 8px;
+        }
+
+        .result-item span:first-child {
+            font-size: 14px;
+        }
+
+        .result-success {
+            color: #4ade80;
+            font-weight: bold;
+        }
+
+        .result-error {
+            color: #f87171;
+            font-weight: bold;
+        }
+
+        .stats-card {
+            background: linear-gradient(to bottom right, rgba(226, 27, 27, 0.2), rgba(226, 27, 27, 0.05));
+            border: 1px solid rgba(226, 27, 27, 0.3);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .stats-card h3 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .stats-card .big-number {
+            font-size: 48px;
+            font-weight: 900;
+            color: #e21b1b;
+            margin: 8px 0;
+        }
+
+        .stats-card .subtitle {
+            font-size: 14px;
+            color: #9b9b9b;
+        }
+
+        .back-button {
+            width: 100%;
+            background: #e21b1b;
+            border: none;
+            color: white;
+            padding: 14px;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            margin-top: 24px;
+            transition: background 0.2s;
+        }
+
+        .back-button:hover {
+            background: #c71818;
+        }
+
+        @media (max-width: 640px) {
+            .hero-text {
+                font-size: 24px;
+            }
+            
+            .page-title h1 {
+                font-size: 24px;
+            }
+            
+            .stats-card .big-number {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <button class="back-btn" onclick="window.history.back()">←</button>
+            <div class="app-title">Cores Precisas</div>
+            <div class="time-display" id="currentTime">00:00 🌙</div>
+        </div>
+
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="hero-icon">🎨</div>
+            <div class="hero-text">
+                CORES <span class="red-text">PRECISAS</span>
+            </div>
+        </div>
+
+        <!-- Content Area -->
+        <div class="content-area">
+            <div class="page-title">
+                <h1>Estratégia de Cores</h1>
+                <p>Sinais precisos para apostas em cores</p>
+            </div>
+
+            <div class="card">
+                <h3>🎯 Status</h3>
+                <p>Aguardando próximo sinal...</p>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>📊 Últimos Resultados</h3>
+                <div class="result-item">
+                    <span>Rodada #1234</span>
+                    <span class="result-success">✓ Acertou</span>
+                </div>
+                <div class="result-item">
+                    <span>Rodada #1233</span>
+                    <span class="result-success">✓ Acertou</span>
+                </div>
+                <div class="result-item">
+                    <span>Rodada #1232</span>
+                    <span class="result-error">✗ Errou</span>
+                </div>
+            </div>
+
+            <div class="stats-card">
+                <h3>🔥 Taxa de Acerto</h3>
+                <div class="big-number">87.5%</div>
+                <p class="subtitle">Últimas 100 rodadas</p>
+            </div>
+
+            <button class="back-button" onclick="window.history.back()">
+                Voltar ao Dashboard
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Update time display
+        function updateTime() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            document.getElementById('currentTime').textContent = `${hours}:${minutes} 🌙`;
+        }
+        
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+</html>
