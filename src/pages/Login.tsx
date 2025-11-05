@@ -3,9 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
-import blazeIcon from "@/assets/blaze-icon.png";
-import blazeLogo from "@/assets/blaze-logo.png";
-import freitasBlazeLogo from "@/assets/freitas-blaze-logo.png";
+import blazeNewLogo from "@/assets/blaze-new-logo.jpg";
 
 interface User {
   user: string;
@@ -143,7 +141,7 @@ const Login = () => {
         <div className="mt-1.5 flex items-center gap-3">
           <div className="w-[62px] h-[62px] bg-gradient-to-b from-zinc-800 to-zinc-950 rounded-[10px] flex items-center justify-center border-2 border-white/[0.02] overflow-hidden p-2">
             <img 
-              src={blazeLogo} 
+              src={blazeNewLogo} 
               alt="Blaze" 
               className="w-full h-full object-contain"
             />
@@ -160,7 +158,7 @@ const Login = () => {
             <div className="flex items-center gap-2.5 mb-2">
               <div className="w-12 h-12 rounded-lg flex items-center justify-center overflow-hidden">
                 <img 
-                  src={freitasBlazeLogo} 
+                  src={blazeNewLogo} 
                   alt="Freitas Blaze" 
                   className="w-full h-full object-contain"
                 />
